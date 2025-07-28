@@ -13,7 +13,7 @@ Foodie-Fi is a fictional subscription-based video service that offers multiple p
 ---
 
 ## 🗂️ Repository Structure
-
+```
 foodie-fi-sql-analytics/
 |-- sql_scripts/
 |   |-- schema_setup.sql
@@ -32,7 +32,7 @@ foodie-fi-sql-analytics/
 |
 |-- README.md
 
-
+```
 
 ---
 
@@ -73,7 +73,7 @@ foodie-fi-sql-analytics/
 - Which customers churned after how many days?
 - Which plan has the highest lifetime value?
 
-> See `/sql/` folder for all queries and logic.
+> See `/sql_scripts/` folder for all queries and logic.
 
 ---
 
@@ -100,7 +100,7 @@ foodie-fi-sql-analytics/
 
 ## 📄 Documentation
 
-- Full project report: [`project_report.md`](project_report.md)
+- Full project report: [`project_report.md`](./docs/project_report.md)
 - Includes data flow, analysis logic, and strategic business insights
 
 ---
@@ -109,9 +109,6 @@ foodie-fi-sql-analytics/
 
 For queries, collaborations, or feedback:
 **Indra A**  
-_Data Analyst | Portfolio Projects_  
- 
-🌐 [LinkedIn Profile]  
 
 ---
 
