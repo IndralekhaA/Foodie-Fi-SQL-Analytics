@@ -42,7 +42,7 @@ GitHub: Version control and project showcase
 
 plans: Plan details including pricing and billing period.
 
-customer\_plans / customer\_plan\_history: Historical record of customer plan subscriptions.
+customer_plans / customer_plan_history: Historical record of customer plan subscriptions.
 
 subscriptions: Initial state (customer sign-up).
 
@@ -50,7 +50,7 @@ payments: Generated payment data for all paying customers in 2020.
 
 
 
-See ERD diagram in /docs/erd.png
+See ERD diagram in [See Diagram](./docs/erd.png)
 
 
 
@@ -76,15 +76,15 @@ Aggregated insights for revenue, churn, upgrades, downgrades, etc.
 
 1\. 💰 Revenue Metrics
 
-Plan Name		Count	Total Revenue
+Plan Name	      - 	Count  -  	Total Revenue
 
-Basic Monthly (1)	3402	- $33,679.80
+Basic Monthly (1)	3402	    - $33,679.80
 
-Pro Monthly (2) 	2882	- $57,351.80
+Pro Monthly (2) 	2882	    - $57,351.80
 
-Pro Annual (3)	 	258 	- $51,342.00
+Pro Annual (3)	 	258 	    - $51,342.00
 
-Total				 $142,373.60
+Total			                	 $142,373.60
 
 
 
@@ -100,9 +100,9 @@ Total				 $142,373.60
 
 
 
-'''
+```
 
-SELECT MONTH(payment\_date) AS month, COUNT(DISTINCT customer\_id) AS new\_customers
+SELECT MONTH(payment_date) AS month, COUNT(DISTINCT customer_id) AS new_customers
 
 FROM payments
 
@@ -110,7 +110,7 @@ GROUP BY month
 
 ORDER BY month;
 
-'''
+```
 
 
 
@@ -120,21 +120,21 @@ Monthly customer additions reveal seasonality and marketing impact.
 
 3\. 🔁 Plan Downgrades \& Upgrades
 
-'''
+```
 
-SELECT \* FROM customer\_plan\_history
+SELECT * FROM customer_plan_history
 
-WHERE plan\_name IN ('pro monthly', 'pro annual') AND
+WHERE plan_name IN ('pro monthly', 'pro annual') AND
 
-      customer\_id IN (
+      customer_id IN (
 
-        SELECT customer\_id FROM customer\_plan\_history
+        SELECT customer_id FROM customer_plan_history
 
-        WHERE plan\_name = 'basic monthly'
+        WHERE plan_name = 'basic monthly'
 
       );
 
-'''
+```
 
 
 
@@ -146,11 +146,12 @@ Identifies customers moving from higher to lower-tier plans.
 
 4\. 📉 Churn Analysis
 
-'''SELECT customer\_id FROM customer\_plan\_history
+```
+SELECT customer_id FROM customer_plan_history
 
-WHERE plan\_name = 'churn';
+WHERE plan_name = 'churn';
 
-'''
+```
 
 
 
@@ -166,11 +167,11 @@ Breakdown by month, prior plan, and time to churn.
 
 🧪 Testing Business Hypotheses
 
-Hypothesis					Method
+Hypothesis					                          Method
 
 Churn is higher for monthly vs annual plans - 	Plan-wise churn rate analysis
 
-Users downgrade before churn		    -   Sequence of plan transitions
+Users downgrade before churn		            -   Sequence of plan transitions
 
 Pro monthly users contribute max revenue    -   Revenue per plan
 
@@ -222,7 +223,7 @@ A/B test different retention strategies
 
 
 
-📊 Visualization Placeholder
+📊 Visualization(Coming)
 
 Dashboards to be added in /dashboards/ folder:
 
